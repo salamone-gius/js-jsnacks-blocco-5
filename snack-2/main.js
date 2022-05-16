@@ -53,11 +53,32 @@ const zucchine = [
 ]
 console.log(zucchine);
 
-// Calcola quanto pesano tutte le zucchine.
-let pesoTotale = 0;
-
+// Dividi in due array separati le zucchine che misurano meno o più di 15cm.
+let menoDiQuindici = [];
+let piuDiQuindici = [];
 for (let i = 0; i < zucchine.length; i++) {
-    pesoTotale = pesoTotale + zucchine[i].peso;
+    if (zucchine[i].lunghezza < 15) {
+        menoDiQuindici.push(zucchine[i]);
+    } else {
+        piuDiQuindici.push(zucchine[i]);
+    }
 }
 
-console.log(pesoTotale);
+console.log(menoDiQuindici);
+console.log(piuDiQuindici);
+
+// Infine stampa separatamente quanto pesano i due gruppi di zucchine.
+let pesoTotaleMenoDiQuindici = 0;
+let pesoTotalePiuDiQuindici = 0;
+
+for (let i = 0; i < menoDiQuindici.length; i++) {
+    pesoTotaleMenoDiQuindici = pesoTotaleMenoDiQuindici + menoDiQuindici[i].peso;
+}
+
+for (let i = 0; i < piuDiQuindici.length; i++) {
+    pesoTotalePiuDiQuindici = pesoTotalePiuDiQuindici + piuDiQuindici[i].peso;
+}
+
+console.log(pesoTotaleMenoDiQuindici);
+console.log(pesoTotalePiuDiQuindici);
+
